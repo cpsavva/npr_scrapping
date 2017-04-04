@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="jumbotron">
+	  <h1>Welcome!</h1>
+	  <p>Click below to scrape for the latest NPR headlines</p>
+	  <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Here!</a></p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<h3>Articles</h3>
+		{{#each scrape_data}}
+			<div class="col-md-4">
+				<h2>{{this.title}}</h2>
+				<p>{{this.teaser}}</p>
+				<form class="form-inline" action="/saved/{{this.id}}" method="POST">
+					<input type="hidden" name="id" value="{{this.id}}">
+					<button type="submit" class="saved">Save</button>
+				</form>
+			</div>
+		{{/each}}
+	</div>
+</div>
