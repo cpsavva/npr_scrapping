@@ -1,0 +1,54 @@
+// Dependencies
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const exhandle = require('express-handlebars');
+// Requiring our Note and Article models
+// var Note = require("./models/Note.js");
+// var Article = require("./models/Article.js");
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+mongoose.Promise = Promise;
+
+
+// Initialize Express
+const app = express();
+
+/* Handlebars and body-parser */
+app.engine('handlebars', exhandle({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+/*use of public content*/
+// app.use(express.static("public"));
+
+/*bringing in web scrapping */
+require('./cheerio.js');
+
+// Database configuration with mongoose
+mongoose.connect("mongodb://localhost/nprScrape");
+var db = mongoose.connection;
+
+// Show any mongoose errors
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
+});
+
+// Once logged in to the db through mongoose, log a success message
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
+
+/*require routes*/
+// require('')(app);
+app.get('/', function(req, res){
+	res.render('index');
+})
+
+// Listen on port 3000
+app.listen(3000, function() {
+  console.log("App running on port 3000!");
+});
