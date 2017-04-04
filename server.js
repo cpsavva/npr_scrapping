@@ -22,10 +22,10 @@ app.use(bodyParser.urlencoded({
 }));
 
 /*use of public content*/
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 /*bringing in web scrapping */
-require('./cheerio.js');
+// require('./cheerio.js')(app);
 
 // Database configuration with mongoose
 mongoose.connect("mongodb://localhost/nprScrape");
@@ -43,7 +43,8 @@ db.once("open", function() {
 
 
 /*require routes*/
-// require('')(app);
+require('./routes/cheerio.js')(app);
+// require('./routes/db_routes.js')(app);
 app.get('/', function(req, res){
 	res.render('index');
 })
@@ -51,4 +52,5 @@ app.get('/', function(req, res){
 // Listen on port 3000
 app.listen(3000, function() {
   console.log("App running on port 3000!");
+
 });
