@@ -6,8 +6,11 @@
 				<h2>{{this.title}}</h2>
 				<p>{{this.teaser}}</p>
 				<a href="{{this.link}}" target="_blank">more...</a>
-				<form class="form-inline" action="/saved/{{this.id}}" method="POST">
-					<input type="hidden" name="id" value="{{this.id}}">
+				<form class="form-inline" action="/save" method="POST">
+					<input type="hidden" name="title" value="{{this.title}}">
+					<input type="hidden" name="teaser" value="{{this.teaser}}">
+					<input type="hidden" name="link" value="{{this.link}}">
+
 					<button type="submit" class="saved">Save</button>
 				</form>
 			</div>

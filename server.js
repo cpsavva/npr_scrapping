@@ -3,9 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const exhandle = require('express-handlebars');
-// Requiring our Note and Article models
-// var Note = require("./models/Note.js");
-// var Article = require("./models/Article.js");
+
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -24,8 +22,6 @@ app.use(bodyParser.urlencoded({
 /*use of public content*/
 app.use(express.static("public"));
 
-/*bringing in web scrapping */
-// require('./cheerio.js')(app);
 
 // Database configuration with mongoose
 mongoose.connect("mongodb://localhost/nprScrape");
@@ -44,7 +40,7 @@ db.once("open", function() {
 
 /*require routes*/
 require('./routes/cheerio.js')(app);
-// require('./routes/db_routes.js')(app);
+require('./routes/db_routes.js')(app);
 app.get('/', function(req, res){
 	res.render('index');
 })
