@@ -1,0 +1,24 @@
+<div class="container">
+	<div class='row'>
+		<h2>Saved</h2>
+	</div>
+	<div class="row">
+		{{#each saved_data}}
+			<div class="col-md-6 panel saved_posts">
+				<form class=" form-inline" action="/{{this.id}}?_method=DELETE" method="POST">
+					<button class="remove" type="submit">Delete Article</button>
+				</form>
+				<h3>{{this.title}}</h3>
+				<p>{{this.teaser}}</p>
+				<a href="{{this.link}}" target="_blank">more...</a>
+	
+				
+				<form class="form-inline" action="/saved/{{this.id}}" method="POST">
+					<input placeholder='Comments' rows='1' type='text' name='body'></input>
+					<button type="submit" class="saved">Done</button>
+				</form>
+				<p class='note'>{{this.comment.body}}</p>
+			</div>
+		{{/each}}
+	</div>
+</div>
