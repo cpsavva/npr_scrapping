@@ -1,0 +1,82 @@
+body {
+	background-image: url('./images/radio2.jpg');
+	background-attachment: fixed;
+	background-color:rgba(0, 0, 0, .6);
+	font-family: 'Inconsolata', monospace;
+	padding-top: 70px;
+}
+.navbar-default {
+	background-color: #D5D4BF;
+	border-color: #7A6653;
+
+}
+
+/*index.handlebars*/
+
+
+/*scrape.handlebars*/
+h2{
+	color: #D5D4BF;
+	font-weight: bolder;
+}
+.posts{
+	height: 250px;
+	overflow: scroll;
+	background-color:rgba(213, 212, 191, .9);
+	color: #361F12;
+	width: 31%;
+	margin: 3px;
+
+}
+p {
+	color: #7A6653;
+}
+h5{
+	font-weight: bold;
+}
+.saved{
+	background-color: #8C9281;
+	color: #361F12;
+}
+
+/*saved articles */
+.saved_posts{
+	height: 250px;
+	overflow: scroll;
+	background-color:rgba(213, 212, 191, .9);
+	color: #361F12;
+	width: 49%;
+	margin: 3px;
+}
+.remove {
+	float: right;
+}
+.note{
+	color: #8C9281;
+}
+
+/*
+white
+	HTML code:	#D5D4BF
+RGB code:	R: 213 G: 212 B: 191
+HSV:	57.27° 10.33% 83.53%
+
+
+green
+	HTML code:	#8C9281
+RGB code:	R: 140 G: 146 B: 129
+HSV:	81.18° 11.64% 57.25%
+
+
+
+
+brown	
+	HTML code:	#7A6653
+RGB code:	R: 122 G: 102 B: 83
+HSV:	29.23° 31.97% 47.84%
+
+dark brown
+	HTML code:	#361F12
+RGB code:	R: 54 G: 31 B: 18
+HSV:	21.67° 66.67% 21.18%
+*/

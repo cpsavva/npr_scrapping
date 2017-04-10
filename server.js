@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const exhandle = require('express-handlebars');
+const methodOverride = require('method-override');
 
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -19,8 +20,11 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-/*use of public content*/
-app.use(express.static("public"));
+/*use of /public content */
+app.use(express.static(__dirname + '/public'));
+
+/*use of method override to delete saved news posts*/
+app.use(methodOverride('_method'))
 
 
 // Database configuration with mongoose

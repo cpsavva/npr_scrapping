@@ -1,9 +1,11 @@
 <div class="container">
+	<div class='row'>
+		<h2>Posts</h2>
+	</div>
 	<div class="row">
-		<h3>Articles</h3>
 		{{#each scrape_data}}
-			<div class="col-md-4">
-				<h2>{{this.title}}</h2>
+			<div class="col-md-4 panel posts scrape_page">
+				<h5>{{this.title}}</h5>
 				<p>{{this.teaser}}</p>
 				<a href="{{this.link}}" target="_blank">more...</a>
 				<form class="form-inline" action="/save" method="POST">
