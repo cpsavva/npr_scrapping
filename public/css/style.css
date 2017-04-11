@@ -12,7 +12,14 @@ body {
 }
 
 /*index.handlebars*/
-
+#index{
+	color: #D5D4BF;
+}
+#scrape {
+	background-color: #361F12;
+	border-color: #7A6653;
+	color: #D5D4BF; 
+}
 
 /*scrape.handlebars*/
 h2{

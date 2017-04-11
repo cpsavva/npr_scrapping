@@ -17,7 +17,14 @@
 					<input placeholder='Comments' rows='1' type='text' name='body'></input>
 					<button type="submit" class="saved">Done</button>
 				</form>
-				<p class='note'>{{this.comment.body}}</p>
+				{{#each this.comment}}
+				<p>
+					<form class='form-inline' action='/comment/{{this.id}}?_method=DELETE' method="POST">
+						<label class='note'>{{body}}</label>
+						<button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</form>
+				</p>
+				{{/each}}
 			</div>
 		{{/each}}
 	</div>
