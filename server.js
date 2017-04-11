@@ -29,7 +29,7 @@ app.use(methodOverride('_method'))
 
 // Database configuration with mongoose
 // mongoose.connect("mongodb://localhost/nprScrape");
-mongoose.connet('mongodb://heroku_w3fn37rw:25s0ub7mllh5j06h7eg7uhc3hh@ds047930.mlab.com:47930/heroku_w3fn37rw');
+mongoose.connect('mongodb://heroku_w3fn37rw:25s0ub7mllh5j06h7eg7uhc3hh@ds047930.mlab.com:47930/heroku_w3fn37rw');
 var db = mongoose.connection;
 
 // Show any mongoose errors
