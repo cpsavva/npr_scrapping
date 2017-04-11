@@ -52,7 +52,7 @@ app.get('/', function(req, res){
 })
 
 // Listen on port 3000
-var port = process.env.PORT || 3000;
+var port = process.env.PORT
 app.listen(port, function() {
   console.log("App running on port 3000!");
 
