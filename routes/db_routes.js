@@ -18,7 +18,7 @@ module.exports = function(app){
 
 		var entry = new NewsPost(post);
 
-		NewsPost.find({title: request.body.title}, function(err, docs){
+		NewsPost.find({title: request.body.link}, function(err, docs){
 			if (docs.length){
 				console.log('already exists')
 			}
