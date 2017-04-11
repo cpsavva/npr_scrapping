@@ -38,7 +38,7 @@ module.exports = function(app){
 		NewsPost.find({})
 		.populate('comment')
 		.exec(function(error, doc){
-			console.log(doc[0].comment[0])
+			// console.log(doc[0].comment[0])
 			if (error){
 				console.log(error)
 			}
