@@ -18,10 +18,10 @@ const NewsPostSchema = new Schema({
 		required: true
 	},
 
-	comment: {
+	comment: [{
 		type: Schema.Types.ObjectId,
 		ref: 'Comment'
-	}
+	}]
 })
 
 const NewsPost = mongoose.model('NewsPost', NewsPostSchema);

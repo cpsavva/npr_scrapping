@@ -45,6 +45,7 @@ db.once("open", function() {
 /*require routes*/
 require('./routes/cheerio.js')(app);
 require('./routes/db_routes.js')(app);
+require('./routes/comment_routes.js')(app);
 app.get('/', function(req, res){
 	res.render('index');
 })
