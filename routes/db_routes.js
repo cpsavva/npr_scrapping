@@ -18,14 +18,23 @@ module.exports = function(app){
 
 		var entry = new NewsPost(post);
 
-		entry.save(function(err, doc){
-			if (err) {
-				console.log(err)
+		NewsPost.find({title: request.body.title}, function(err, docs){
+			if (docs.length){
+				console.log('already exists')
 			}
-			else {
-			console.log('saved!')
-		}
-		})
+			else{
+				entry.save(function(err, doc){
+					if (err) {
+						console.log(err)
+					}
+					else {
+					console.log('saved!')
+					}
+				})
+			}
+		});
+
+		
 
 		response.redirect('/scrape')
 	})
