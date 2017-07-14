@@ -28,5 +28,6 @@ module.exports = function(app) {
             // console.log(result);
             res.render('scrape', {scrape_data: result});
         })
+        
     })
 };
