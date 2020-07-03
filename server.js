@@ -33,7 +33,7 @@ app.use(methodOverride('_method'))
 
 // Database configuration with mongoose
 // mongoose.connect("mongodb://localhost/nprScrape");
-mongoose.connect(process.env.MONGOOSE_DB, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 // Show any mongoose errors
