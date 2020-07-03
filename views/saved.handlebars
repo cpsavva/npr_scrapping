@@ -5,20 +5,18 @@
 	<div class="row">
       {{#each saved_data}}
         <div class="col-md-4">
-          <div class="card posts">
+          <div class="card posts saved_posts">
             <div class="card-body">
               <div class="row justify-content-end">
                 <form class=" form-inline" action="/{{this.id}}?_method=DELETE" method="POST">
                   <button class="btn btn-sm saved" type="submit">Delete Article</button>
                 </form>
               </div><!--row for delete buttom -->
-              <div class="row">
                 <h5 class="card-title">{{this.title}}</h5>
                 <p class="card-text">{{this.teaser}}</p>
                 <a class="card-link" href="{{this.link}}" target="_blank">more...</a>
                 <br>
                 <br>
-              </div>
                 <form action="/saved/{{this.id}}" method="POST">
                   <input placeholder='Comments' rows='1' type='text' name='body'>
                   <button type="submit" class="btn btn-sm scrape">Done</button>

@@ -87,15 +87,14 @@ h5{
 	color: #8C9281;
 	border-color: #7A6653;
 }
+.saved:active {
+	box-shadow: 0 0 0;
+	outline: 0 none;
+}
 
 /*saved articles */
 .saved_posts{
-	height: 250px;
-	overflow: scroll;
-	background-color:rgba(213, 212, 191, .9);
-	color: #361F12;
-	width: 49%;
-	margin: 3px;
+	height: 30rem;
 }
 .note{
 	color: #8C9281;
