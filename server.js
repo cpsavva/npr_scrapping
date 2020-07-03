@@ -2,8 +2,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const Handlebars = require('handlebars');
 const exhandle = require('express-handlebars');
 const methodOverride = require('method-override');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -14,7 +16,7 @@ mongoose.Promise = Promise;
 const app = express();
 
 /* Handlebars and body-parser */
-app.engine('handlebars', exhandle({defaultLayout: 'main'}));
+app.engine('handlebars', exhandle({defaultLayout: 'main', handlebars: allowInsecurePrototypeAccess(Handlebars)}));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({
   extended: false
@@ -29,7 +31,7 @@ app.use(methodOverride('_method'))
 
 // Database configuration with mongoose
 // mongoose.connect("mongodb://localhost/nprScrape");
-mongoose.connect('mongodb://heroku_w3fn37rw:25s0ub7mllh5j06h7eg7uhc3hh@ds047930.mlab.com:47930/heroku_w3fn37rw');
+mongoose.connect('mongodb://heroku_w3fn37rw:25s0ub7mllh5j06h7eg7uhc3hh@ds047930.mlab.com:47930/heroku_w3fn37rw', { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 
 // Show any mongoose errors

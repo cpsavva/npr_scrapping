@@ -1,27 +1,59 @@
+/*
+white
+	HEX code:	#D5D4BF
+RGB code:	R: 213 G: 212 B: 191
+HSV:	57.27° 10.33% 83.53%
+green
+	HEX code:	#8C9281
+RGB code:	R: 140 G: 146 B: 129
+HSV:	81.18° 11.64% 57.25%
+
+brown	
+	HEX code:	#7A6653
+RGB code:	R: 122 G: 102 B: 83
+HSV:	29.23° 31.97% 47.84%
+
+dark brown
+	HEX code:	#361F12
+RGB code:	R: 54 G: 31 B: 18
+HSV:	21.67° 66.67% 21.18%
+*/
+
+
 body {
 	background-image: url('./images/radio2.jpg');
 	background-attachment: fixed;
-	background-color:rgba(0, 0, 0, .6);
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Inconsolata', monospace;
 	padding-top: 70px;
 }
-.navbar-default {
+nav {
 	background-color: #D5D4BF;
 	border-color: #7A6653;
-
+}
+.navbar-light .navbar-brand {
+	color: #7A6653;
 }
 #icon{
-	height: 20px;
-	width: 20px;
+	height: 2rem;
+	width: 2rem;
 }
 
 /*index.handlebars*/
 #index{
 	color: #D5D4BF;
+	text-shadow: 2px 2px #361F12;
 }
-#scrape {
+
+.scrape {
 	background-color: #361F12;
 	border-color: #7A6653;
+	color: #D5D4BF; 
+}
+.scrape:hover {
+	background-color: #7A6653;
+	border-color: #361F12;
 	color: #D5D4BF; 
 }
 
@@ -29,14 +61,14 @@ body {
 h2{
 	color: #D5D4BF;
 	font-weight: bolder;
+	text-shadow: 2px 2px #361F12;
 }
 .posts{
-	height: 250px;
+	height: 25rem;
 	overflow: scroll;
 	background-color:rgba(213, 212, 191, .9);
 	color: #361F12;
-	width: 31%;
-	margin: 3px;
+	margin-bottom: 2rem;
 
 }
 p {
@@ -48,6 +80,12 @@ h5{
 .saved{
 	background-color: #8C9281;
 	color: #361F12;
+	border-color: #7A6653;
+}
+.saved:hover {
+	background-color: #361F12;
+	color: #8C9281;
+	border-color: #7A6653;
 }
 
 /*saved articles */
@@ -59,35 +97,11 @@ h5{
 	width: 49%;
 	margin: 3px;
 }
-.remove {
-	float: right;
-}
 .note{
 	color: #8C9281;
 }
+input[type='text']:focus {
+	outline: 0 none;
+	box-shadow: 0;
+}
 
-/*
-white
-	HTML code:	#D5D4BF
-RGB code:	R: 213 G: 212 B: 191
-HSV:	57.27° 10.33% 83.53%
-
-
-green
-	HTML code:	#8C9281
-RGB code:	R: 140 G: 146 B: 129
-HSV:	81.18° 11.64% 57.25%
-
-
-
-
-brown	
-	HTML code:	#7A6653
-RGB code:	R: 122 G: 102 B: 83
-HSV:	29.23° 31.97% 47.84%
-
-dark brown
-	HTML code:	#361F12
-RGB code:	R: 54 G: 31 B: 18
-HSV:	21.67° 66.67% 21.18%
-*/

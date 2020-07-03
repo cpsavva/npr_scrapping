@@ -1,20 +1,25 @@
 <div class="container">
-	<div class='row'>
+	<div class="row">
 		<h2>Posts</h2>
 	</div>
 	<div class="row">
 		{{#each scrape_data}}
-			<div class="col-md-4 panel posts scrape_page">
-				<h5>{{this.title}}</h5>
-				<p>{{this.teaser}}</p>
-				<a href="{{this.link}}" target="_blank">more...</a>
-				<form class="form-inline" action="/save" method="POST">
-					<input type="hidden" name="title" value="{{this.title}}">
-					<input type="hidden" name="teaser" value="{{this.teaser}}">
-					<input type="hidden" name="link" value="{{this.link}}">
-
-					<button type="submit" class="saved">Save</button>
-				</form>
+			<div class="col-md-4">
+	    		<div class="card posts">
+				  <div class="card-body">
+				  <div class="row justify-content-end">
+					  	<form action="/save" method="POST">
+							<input type="hidden" name="title" value="{{this.title}}">
+							<input type="hidden" name="teaser" value="{{this.teaser}}">
+							<input type="hidden" name="link" value="{{this.link}}">
+							<button type="submit" class="btn btn-sm saved">Save</button>
+						</form>
+					</div>
+				    <h5 class="card-title">{{this.title}}</h5>
+				    <p class="card-text">{{this.teaser}}</p>
+				    <a href="{{this.link}}" target="_blank" class="card-link">more...</a>
+				  </div>
+				</div>
 			</div>
 		{{/each}}
 	</div>

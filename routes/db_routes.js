@@ -63,7 +63,7 @@ module.exports = function(app){
 	app.delete('/:id', function(request, response){
 		// console.log('trying to delete');
 		// console.log(request.params.id);
-		NewsPost.remove({
+		NewsPost.deleteOne({
 			'_id': request.params.id
 		}, function(error){
 			if (error){

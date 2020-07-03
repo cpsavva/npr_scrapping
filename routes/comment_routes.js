@@ -20,7 +20,7 @@ module.exports = function(app){
 				console.log(error);
 			}
 			else{
-				NewsPost.update({'_id': request.params.id}, {$push: {'comment': doc._id}})
+				NewsPost.updateOne({'_id': request.params.id}, {$push: {'comment': doc._id}})
 				.exec(function(error, doc){
 					if (error){
 						console.log(error);
@@ -28,13 +28,12 @@ module.exports = function(app){
 					else{
 						console.log('added note!');
 						// response.render('saved', {comment_data: doc});
+						response.redirect('/saved');
 					}
 				})
 			}
-
 		})
  
-		response.redirect('/saved')
 	})
 
 	/*delete comment*/
@@ -42,7 +41,7 @@ module.exports = function(app){
 		console.log('trying to delete');
 		console.log(request.params.id);
 		
-		Comment.remove({
+		Comment.deleteOne({
 			'_id': request.params.id
 		}, function(error){
 			if (error){

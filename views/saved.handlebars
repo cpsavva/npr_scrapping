@@ -3,29 +3,37 @@
 		<h2>Saved</h2>
 	</div>
 	<div class="row">
-		{{#each saved_data}}
-			<div class="col-md-6 panel saved_posts">
-				<form class=" form-inline" action="/{{this.id}}?_method=DELETE" method="POST">
-					<button class="remove" type="submit">Delete Article</button>
-				</form>
-				<h3>{{this.title}}</h3>
-				<p>{{this.teaser}}</p>
-				<a href="{{this.link}}" target="_blank">more...</a>
-	
-				
-				<form class="form-inline" action="/saved/{{this.id}}" method="POST">
-					<input placeholder='Comments' rows='1' type='text' name='body'></input>
-					<button type="submit" class="saved">Done</button>
-				</form>
-				{{#each this.comment}}
-				<p>
-					<form class='form-inline' action='/comment/{{this.id}}?_method=DELETE' method="POST">
-						<label class='note'>{{body}}</label>
-						<button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</form>
-				</p>
-				{{/each}}
-			</div>
-		{{/each}}
+      {{#each saved_data}}
+        <div class="col-md-4">
+          <div class="card posts">
+            <div class="card-body">
+              <div class="row justify-content-end">
+                <form class=" form-inline" action="/{{this.id}}?_method=DELETE" method="POST">
+                  <button class="btn btn-sm saved" type="submit">Delete Article</button>
+                </form>
+              </div><!--row for delete buttom -->
+              <div class="row">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.teaser}}</p>
+                <a class="card-link" href="{{this.link}}" target="_blank">more...</a>
+                <br>
+                <br>
+              </div>
+                <form action="/saved/{{this.id}}" method="POST">
+                  <input placeholder='Comments' rows='1' type='text' name='body'>
+                  <button type="submit" class="btn btn-sm scrape">Done</button>
+                </form>
+           {{#each this.comment}}
+                  <p>
+                    <form action='/comment/{{this.id}}?_method=DELETE' method="POST">
+                      <label class='note'>{{body}}</label>
+                      <button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </form>
+                  </p>
+             {{/each}}
+          </div> <!-- card body -->
+        </div> <!--each cards -->
+      </div> 
+      {{/each}}
 	</div>
 </div>
